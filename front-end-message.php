@@ -5,11 +5,12 @@
  */
 /*
 Plugin Name: Front End Message
-Plugin URI: http://#
+Plugin URI: http://webtechandmore.com/free-plugins
 Description: This plugin was created to extend on the "front-end-pm" plugin. This plugin contains a form inside of a shadowbox which can be placed on a members profile page.
 Author: Gabriel Alfaro
 Version: 1.0
-Author URI: http://#
+Author URI: http://Gabriel Alfaro
+License: GPLv2
 */
 
 //Main CLASS
@@ -48,7 +49,7 @@ if (!class_exists("fep_message_class")){
     }
 /******************************************SETUP END******************************************/
 
-/******************************************NEW MESSAGE PAGE BEGIN******************************************/
+/******************************************NEW MESSAGE BEGIN******************************************/
 //Create and display the message form
     function dispNewForm(){
 
@@ -58,7 +59,6 @@ if (!class_exists("fep_message_class")){
 /****** Update here to get users name ******/
 		$store_user = get_userdata( get_query_var( 'author' ) );
 		$message_to = $store_user->user_login;
-		echo $message_to;
 /****** end of Update here to get users name ******/
 		
 		$message_title = ( isset( $_REQUEST['message_title'] ) ) ? $_REQUEST['message_title']: '';
@@ -84,7 +84,7 @@ if (!class_exists("fep_message_class")){
 					</form>
 					<input type='button' id='message_submit' value='Send Message' />
 					<div id='simple-msg'></div>
-                </div>
+                		</div>
             </div>
         </div>
         <script src='".$this->jsURL."shadow_box.js'></script>
@@ -92,7 +92,7 @@ if (!class_exists("fep_message_class")){
 		
 		return $newMsg;
     }
-/******************************************NEW MESSAGE PAGE END******************************************/
+/******************************************NEW MESSAGE END******************************************/
 
 /******************************************MISC. FUNCTIONS BEGIN******************************************/
 	function fep_create_nonce($action = -1) {
